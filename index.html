@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumina Shades - Premium Sunglasses Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#fdfdfd;
+  color:#333;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 60px;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+  font-size:28px;
+  font-weight:700;
+  color:#111827;
+  cursor:pointer;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#555;
+  font-weight:500;
+  position:relative;
+  transition:0.3s;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:#111827;
+  transition:0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+  width:100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:#111827;
+}
+
+.nav-icons{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  font-size:20px;
+}
+
+.cart-icon{
+  position:relative;
+  cursor:pointer;
+}
+
+#cartCount{
+  position:absolute;
+  top:-8px;
+  right:-12px;
+  background:#ef4444;
+  color:white;
+  font-size:11px;
+  padding:2px 6px;
+  border-radius:50%;
+}
+
+.hamburger{
+  display:none;
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:120px 20px 60px;
+  background:linear-gradient(135deg,#f8fafc 0%,#ffffff 50%,#e2e8f0 100%);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  width:400px;
+  height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(0,0,0,0.07) 0%, transparent 70%);
+  top:-100px;
+  right:-100px;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(0,0,0,0.05) 0%, transparent 70%);
+  bottom:-50px;
+  left:-50px;
+}
+
+.hero-content{
+  max-width:760px;
+  z-index:1;
+}
+
+.hero h1{
+  font-size:60px;
+  color:#111827;
+  line-height:1.1;
+  margin-bottom:18px;
+}
+
+.hero p{
+  font-size:17px;
+  color:#555;
+  margin-bottom:30px;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-bottom:40px;
+}
+
+.btn{
+  padding:14px 32px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:#111827;
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  background:#000;
+}
+
+.btn-outline{
+  border:2px solid #111827;
+  color:#111827;
+}
+
+.btn-outline:hover{
+  background:#111827;
+  color:white;
+}
+
+.hero-stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  text-align:center;
+  color:#555;
+}
+
+.stat-number{
+  display:block;
+  font-size:30px;
+  font-weight:700;
+  color:#111827;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+  padding:80px 60px;
+  text-align:center;
+}
+
+.categories h2{
+  font-size:38px;
+  color:#111827;
+  margin-bottom:10px;
+}
+
+.categories p{
+  color:#666;
+  margin-bottom:45px;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.cat-card{
+  background:#f8fafc;
+  padding:35px 15px;
+  border-radius:16px;
+  transition:0.3s;
+  cursor:pointer;
+  border:1px solid #eee;
+}
+
+.cat-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+  background:white;
+}
+
+.cat-card span{
+  font-size:42px;
+  display:block;
+  margin-bottom:12px;
+}
+
+.cat-card h3{
+  margin-bottom:5px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.bestsellers{
+  padding:80px 60px;
+  background:#f9fafb;
+}
+
+.section-header{
+  max-width:1100px;
+  margin:0 auto 45px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.section-header h2{
+  font-size:36px;
+  color:#111827;
+}
+
+.view-all{
+  text-decoration:none;
+  color:#111827;
+  font-weight:600;
+}
+
+.product-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+.product-card{
+  background:white;
+  border-radius:18px;
+  padding:20px;
+  text-align:center;
+  position:relative;
+  border:1px solid #eee;
+  transition:0.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+.product-card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.badge{
+  position:absolute;
+  top:15px;
+  left:15px;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:10px;
+  color:white;
+  font-weight:700;
+}
+
+.bestseller{
+  background:#ef4444;
+}
+
+.new{
+  background:#111827;
+}
+
+.premium{
+  background:#f59e0b;
+}
+
+.rating{
+  color:#f59e0b;
+  margin-bottom:8px;
+}
+
+.sale-price{
+  color:#111827;
+  font-size:20px;
+  font-weight:700;
+}
+
+.original-price{
+  color:#aaa;
+  text-decoration:line-through;
+  margin-left:6px;
+}
+
+.product-card button{
+  margin-top:15px;
+  padding:12px 22px;
+  border:none;
+  border-radius:50px;
+  background:#111827;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.product-card button:hover{
+  background:black;
+}
+
+/* ================= FEATURES ================= */
+
+.why-us{
+  padding:80px 60px;
+  text-align:center;
+}
+
+.why-us h2{
+  font-size:38px;
+  margin-bottom:10px;
+  color:#111827;
+}
+
+.features-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  margin-top:45px;
+}
+
+.feature-card{
+  background:#f9fafb;
+  padding:35px 25px;
+  border-radius:16px;
+  border:1px solid #eee;
+  transition:0.3s;
+}
+
+.feature-card:hover{
+  transform:translateY(-8px);
+  background:white;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.feature-card span{
+  font-size:42px;
+  display:block;
+  margin-bottom:12px;
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonials{
+  padding:80px 60px;
+  background:linear-gradient(135deg,#f8fafc 0%,#ffffff 100%);
+  text-align:center;
+}
+
+.testimonials h2{
+  font-size:38px;
+  margin-bottom:45px;
+  color:#111827;
+}
+
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.testimonial-card{
+  background:white;
+  padding:30px 25px;
+  border-radius:16px;
+  text-align:left;
+  box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
+
+.stars{
+  color:#f59e0b;
+  margin-bottom:12px;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+  padding:80px 20px;
+  text-align:center;
+  background:#111827;
+  color:white;
+}
+
+.newsletter h2{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.newsletter p{
+  margin-bottom:25px;
+}
+
+.newsletter-form{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.newsletter-form input{
+  padding:14px 22px;
+  border:none;
+  border-radius:50px;
+  width:320px;
+}
+
+.newsletter-form button{
+  padding:14px 28px;
+  border:none;
+  border-radius:50px;
+  background:white;
+  color:#111827;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#0f172a;
+  color:#ccc;
+  padding:60px 60px 20px;
+}
+
+.footer-content{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.5fr;
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.footer-col h3,
+.footer-col h4{
+  color:white;
+  margin-bottom:15px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col ul li{
+  margin-bottom:8px;
+}
+
+.footer-col ul a{
+  color:#aaa;
+  text-decoration:none;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #333;
+  color:#888;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px){
+
+  .category-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .features-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .testimonial-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .navbar{
+    padding:15px 20px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .category-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-content{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="navbar">
+
+<h2 class="logo">🕶️ Lumina Shades</h2>
+
+<nav>
+<ul class="nav-links">
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="products.html">Collections</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="blog.html">Style Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="nav-icons">
+<div class="cart-icon">
+🛒 <span id="cartCount">0</span>
+</div>
+<span class="hamburger">☰</span>
+</div>
+
+</div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Luxury Sunglasses<br>That Define Your Style</h1>
+
+<p>
+Discover premium sunglasses crafted for fashion, comfort, and UV protection.
+Elevate every outfit with timeless shades from Lumina Shades.
+</p>
+
+<div class="hero-buttons">
+<a href="products.html" class="btn btn-primary">Shop Collection →</a>
+<a href="products.html" class="btn btn-outline">Explore Styles →</a>
+</div>
+
+<div class="hero-stats">
+
+<div class="stat">
+<span class="stat-number">5000+</span>
+Happy Customers
+</div>
+
+<div class="stat">
+<span class="stat-number">100%</span>
+UV Protection
+</div>
+
+<div class="stat">
+<span class="stat-number">24Hr</span>
+Fast Shipping
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<!-- SHOP BY STYLE -->
+<section class="categories">
+  <h2>Shop By Style</h2>
+  <p>Find the perfect shades for every mood and every look.</p>
+
+  <div class="category-grid">
+
+    <div class="cat-card" onclick="filterProducts('aviator'); scrollToProducts();">
+      <span>🕶️</span>
+      <h3>Aviators</h3>
+      <p>12 Styles</p>
+    </div>
+
+    <div class="cat-card" onclick="filterProducts('wayfarer'); scrollToProducts();">
+      <span>😎</span>
+      <h3>Wayfarers</h3>
+      <p>12 Styles</p>
+    </div>
+
+    <div class="cat-card" onclick="filterProducts('luxury'); scrollToProducts();">
+      <span>✨</span>
+      <h3>Luxury</h3>
+      <p>12 Styles</p>
+    </div>
+
+    <div class="cat-card" onclick="filterProducts('polarized'); scrollToProducts();">
+      <span>🌞</span>
+      <h3>Polarized</h3>
+      <p>12 Styles</p>
+    </div>
+
+    <div class="cat-card" onclick="filterProducts('streetwear'); scrollToProducts();">
+      <span>🔥</span>
+      <h3>Streetwear</h3>
+      <p>12 Styles</p>
+    </div>
+
+    <div class="cat-card" onclick="filterProducts('premium'); scrollToProducts();">
+      <span>💎</span>
+      <h3>Premium</h3>
+      <p>12 Styles</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="bestsellers" id="productsSection">
+
+  <div class="section-header">
+    <h2>Trending Shades</h2>
+    <a href="products.html" class="view-all">View All Products →</a>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- ================= AVIATORS ================= -->
+
+<section class="bestsellers" id="productsSection">
+
+  <div class="section-header">
+    <h2>Aviator Shades Collection</h2>
+    <a href="products.html" class="view-all">View All →</a>
+  </div>
+
+  <h3 style="margin:20px 0;color:#2d6a4f;">Men Aviators</h3>
+
+  <div class="product-grid">
+
+    <div class="product-card aviator men">
+      <img src="images/aviators/men1.jpg" alt="Men Aviator 1">
+      <h3>Steel Aviator Classic</h3>
+      <p><span class="sale-price">Rs. 2,499</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator men">
+      <img src="images/aviators/men2.jpg" alt="Men Aviator 2">
+      <h3>Black Edge Aviator</h3>
+      <p><span class="sale-price">Rs. 2,799</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator men">
+      <img src="images/aviators/men3.jpg" alt="Men Aviator 3">
+      <h3>Gold Frame Aviator</h3>
+      <p><span class="sale-price">Rs. 3,199</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator men">
+      <img src="images/aviators/men4.jpg" alt="Men Aviator 4">
+      <h3>Dark Lens Aviator</h3>
+      <p><span class="sale-price">Rs. 2,599</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator men">
+      <img src="images/aviators/men5.jpg" alt="Men Aviator 5">
+      <h3>Silver Storm Aviator</h3>
+      <p><span class="sale-price">Rs. 2,999</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator men">
+      <img src="images/aviators/men6.jpg" alt="Men Aviator 6">
+      <h3>Urban Pilot Aviator</h3>
+      <p><span class="sale-price">Rs. 3,299</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+
+  <h3 style="margin:40px 0 20px;color:#2d6a4f;">Women Aviators</h3>
+
+  <div class="product-grid">
+
+    <div class="product-card aviator women">
+      <img src="images/aviators/women1.jpg" alt="Women Aviator 1">
+      <h3>Rose Gold Aviator</h3>
+      <p><span class="sale-price">Rs. 2,899</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator women">
+      <img src="images/aviators/women2.jpg" alt="Women Aviator 2">
+      <h3>Elegant Pink Aviator</h3>
+      <p><span class="sale-price">Rs. 2,699</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator women">
+      <img src="images/aviators/women3.jpg" alt="Women Aviator 3">
+      <h3>Luxury Gold Aviator</h3>
+      <p><span class="sale-price">Rs. 3,499</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator women">
+      <img src="images/aviators/women4.jpg" alt="Women Aviator 4">
+      <h3>Soft Brown Aviator</h3>
+      <p><span class="sale-price">Rs. 2,599</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator women">
+      <img src="images/aviators/women5.jpg" alt="Women Aviator 5">
+      <h3>Crystal Shine Aviator</h3>
+      <p><span class="sale-price">Rs. 3,199</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card aviator women">
+      <img src="images/aviators/women6.jpg" alt="Women Aviator 6">
+      <h3>Sunset Glow Aviator</h3>
+      <p><span class="sale-price">Rs. 3,299</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- ================= WAYFARERS ================= -->
+
+    <!-- WAYFARER COLLECTION -->
+<section class="bestsellers">
+
+  <div class="section-header">
+    <h2>Wayfarer Collection</h2>
+  </div>
+
+  <!-- ================= MEN ================= -->
+  <h3 style="margin:20px 0;color:#2d6a4f;">Men Wayfarers</h3>
+
+  <div class="product-grid">
+
+    <div class="product-card wayfarer men">
+      <img src="images/wayfarers/men/men1.jpg" alt="Men Wayfarer">
+      <h3>Classic Black Wayfarer</h3>
+      <p><span class="sale-price">Rs. 2,199</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card wayfarer men">
+      <img src="images/wayfarers/men/men2.jpg" alt="Men Wayfarer">
+      <h3>Urban Matte Wayfarer</h3>
+      <p><span class="sale-price">Rs. 2,499</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card wayfarer men">
+      <img src="images/wayfarers/men/men3.jpg" alt="Men Wayfarer">
+      <h3>Dark Street Wayfarer</h3>
+      <p><span class="sale-price">Rs. 2,799</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card wayfarer men">
+      <img src="images/wayfarers/men/men4.jpg" alt="Men Wayfarer">
+      <h3>Carbon Edge Wayfarer</h3>
+      <p><span class="sale-price">Rs. 2,599</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card wayfarer men">
+      <img src="images/wayfarers/men/men5.jpg" alt="Men Wayfarer">
+      <h3>Premium Black Frame</h3>
+      <p><span class="sale-price">Rs. 3,199</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+
+  <!-- ================= WOMEN ================= -->
+  <h3 style="margin:40px 0 20px;color:#2d6a4f;">Women Wayfarers</h3>
+
+  <div class="product-grid">
+
+    <div class="product-card wayfarer women">
+      <img src="images/wayfarers/women/women1.jpg" alt="Women Wayfarer">
+      <h3>Rose Gold Wayfarer</h3>
+      <p><span class="sale-price">Rs. 2,699</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card wayfarer women">
+      <img src="images/wayfarers/women/women2.jpg" alt="Women Wayfarer">
+      <h3>Elegant Brown Wayfarer</h3>
+      <p><span class="sale-price">Rs. 2,499</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card wayfarer women">
+      <img src="images/wayfarers/women/women3.jpg" alt="Women Wayfarer">
+      <h3>Luxury Soft Tint</h3>
+      <p><span class="sale-price">Rs. 3,199</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card wayfarer women">
+      <img src="images/wayfarers/women/women4.jpg" alt="Women Wayfarer">
+      <h3>Fashion Cat Wayfarer</h3>
+      <p><span class="sale-price">Rs. 2,899</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card wayfarer women">
+      <img src="images/wayfarers/women/women5.jpg" alt="Women Wayfarer">
+      <h3>Sunset Glow Frame</h3>
+      <p><span class="sale-price">Rs. 3,299</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- ================= LUXURY ================= -->
+
+    <div class="product-card luxury premium">
+      <span class="badge premium">PREMIUM</span>
+      <img src="images/royal-luxe.jpg" alt="Royal Luxe" loading="lazy">
+      <h3>Royal Luxe</h3>
+      <div class="rating">★★★★★ <small>(312)</small></div>
+      <p><span class="sale-price">Rs. 5,999</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card luxury premium">
+      <img src="images/elite-diamond.jpg" alt="Elite Diamond" loading="lazy">
+      <h3>Elite Diamond</h3>
+      <div class="rating">★★★★★ <small>(284)</small></div>
+      <p><span class="sale-price">Rs. 6,499</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- ================= POLARIZED ================= -->
+
+    <div class="product-card polarized">
+      <span class="badge bestseller">BESTSELLER</span>
+      <img src="images/polar-vision.jpg" alt="Polar Vision" loading="lazy">
+      <h3>Polar Vision</h3>
+      <div class="rating">★★★★★ <small>(401)</small></div>
+      <p><span class="sale-price">Rs. 3,499</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card polarized">
+      <img src="images/polar-vision-ocean.jpg" alt="Polar Vision" loading="lazy">
+      <h3>Ocean Polarized</h3>
+      <div class="rating">★★★★★ <small>(256)</small></div>
+      <p><span class="sale-price">Rs. 3,999</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- ================= STREETWEAR ================= -->
+
+    <div class="product-card streetwear">
+      <span class="badge new">TRENDING</span>
+      <img src="images/streetwear-1.jpg" alt="Street Edge" loading="lazy">
+      <h3>Street Edge</h3>
+      <div class="rating">★★★★☆ <small>(178)</small></div>
+      <p><span class="sale-price">Rs. 2,699</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card streetwear">
+      <img src="images/neon-street.jpg" alt="Neon Street" loading="lazy">
+      <h3>Neon Street</h3>
+      <div class="rating">★★★★☆ <small>(145)</small></div>
+      <p><span class="sale-price">Rs. 2,999</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- ================= PREMIUM ================= -->
+
+    <div class="product-card premium">
+      <span class="badge premium">LUXURY</span>
+      <img src="images/diamond-glow.jpg" alt="Diamond Glow" loading="lazy">
+      <h3>Diamond Glow</h3>
+      <div class="rating">★★★★★ <small>(298)</small></div>
+      <p><span class="sale-price">Rs. 7,499</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card premium">
+      <img src="images/midnight-premium.jpg" alt="Midnight Premium" loading="lazy">
+      <h3>Midnight Premium</h3>
+      <div class="rating">★★★★★ <small>(233)</small></div>
+      <p><span class="sale-price">Rs. 6,999</span></p>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+
+function filterProducts(category) {
+
+  let products = document.querySelectorAll('.product-card');
+
+  products.forEach(product => {
+
+    if(category === 'all') {
+      product.style.display = 'block';
+    }
+
+    else {
+
+      if(product.classList.contains(category)) {
+        product.style.display = 'block';
+      }
+
+      else {
+        product.style.display = 'none';
+      }
+
+    }
+
+  });
+
+}
+
+function scrollToProducts() {
+
+  document.getElementById('productsSection').scrollIntoView({
+    behavior: 'smooth'
+  });
+
+}
+
+</script>
+<!-- PRODUCTS -->
+
+<section class="bestsellers">
+
+<div class="section-header">
+<h2>Trending Sunglasses</h2>
+<a href="products.html" class="view-all">View All →</a>
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<span class="badge bestseller">HOT</span>
+
+<img src="images/aviator-classic.jpg" alt="Aviator Classic" loading="lazy">
+<h3>Aviator Classic</h3>
+
+<div class="rating">★★★★★ (245)</div>
+
+<p>
+<span class="sale-price">Rs. 2,499</span>
+<span class="original-price">Rs. 3,200</span>
+</p>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product-card">
+
+<span class="badge new">NEW</span>
+
+<img src="images/urban-black.jpg" alt="Urban Black" loading="lazy">
+<h3>Urban Black</h3>
+
+<div class="rating">★★★★☆ (184)</div>
+
+<p>
+<span class="sale-price">Rs. 2,999</span>
+</p>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product-card">
+
+<span class="badge premium">PREMIUM</span>
+
+<img src="images/golden-frame-elite.jpg" alt="Golden Frame Elite" loading="lazy">
+
+<div class="rating">★★★★★ (312)</div>
+
+<p>
+<span class="sale-price">Rs. 4,499</span>
+</p>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="product-card">
+
+<span class="badge bestseller">BESTSELLER</span>
+
+<img src="images/polarized-pro.jpg" alt="Polarized Pro" loading="lazy">
+
+<h3>Polarized Pro</h3>
+
+<div class="rating">★★★★★ (401)</div>
+
+<p>
+<span class="sale-price">Rs. 3,999</span>
+<span class="original-price">Rs. 4,800</span>
+</p>
+
+<button>Add to Cart</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY US -->
+
+<section class="why-us">
+
+<h2>Why Choose Lumina Shades</h2>
+
+<p>Premium eyewear crafted for style and comfort.</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<span>🛡️</span>
+<h3>UV400 Protection</h3>
+<p>Protect your eyes from harmful UVA & UVB rays with high-quality UV400 lenses.</p>
+</div>
+
+<div class="feature-card">
+<span>✨</span>
+<h3>Luxury Designs</h3>
+<p>Modern, elegant, and fashion-forward frames designed to match every personality.</p>
+</div>
+
+<div class="feature-card">
+<span>💎</span>
+<h3>Premium Materials</h3>
+<p>Durable lightweight frames built with premium-quality materials for all-day comfort.</p>
+</div>
+
+<div class="feature-card">
+<span>🚚</span>
+<h3>Fast Delivery</h3>
+<p>Quick nationwide shipping with secure packaging and tracking updates.</p>
+</div>
+
+<div class="feature-card">
+<span>🔥</span>
+<h3>Trending Styles</h3>
+<p>Stay ahead of fashion with the latest celebrity-inspired sunglasses collections.</p>
+</div>
+
+<div class="feature-card">
+<span>💯</span>
+<h3>Customer Satisfaction</h3>
+<p>Thousands of happy customers trust Lumina Shades for premium eyewear.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+<h2>Customer Reviews</h2>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p>
+"The quality is absolutely premium. These shades instantly upgraded my outfits!"
+</p>
+<h4>— Sarah Khan</h4>
+</div>
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p>
+"Stylish, lightweight, and super comfortable. Definitely ordering again."
+</p>
+<h4>— Ali Raza</h4>
+</div>
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p>
+"Perfect UV protection and luxury feel. Worth every rupee!"
+</p>
+<h4>— Hania Malik</h4>
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+<h2>Stay In Style</h2>
+
+<p>Get exclusive deals, new arrivals & fashion updates directly to your inbox.</p>
+
+<form class="newsletter-form">
+
+<input type="email" placeholder="Enter your email">
+
+<button type="submit">Subscribe →</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<div class="footer-col">
+
+<h3>🕶️ Lumina Shades</h3>
+
+<p>
+Luxury sunglasses designed for bold personalities and modern lifestyles.
+</p>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Quick Links</h4>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Collections</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="blog.html">Style Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Contact</h4>
+
+<p>📧 luminashades@gmail.com</p>
+<p>📞 +92 300 1234567</p>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Newsletter</h4>
+
+<p>Subscribe for latest drops & offers.</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Lumina Shades. All Rights Reserved.
+</div>
+
+</footer>
+
+</body>
+</html>
