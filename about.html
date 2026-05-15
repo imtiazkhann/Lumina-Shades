@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Lumina Shades</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<div class="navbar">
+  <h2 class="logo">🕶️ Lumina Shades</h2>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="products.php">Products</a></li>
+      <li><a href="about.php" class="active">About</a></li>
+      <li><a href="blog.php">Blog</a></li>
+      <li><a href="contact.php">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-icons">
+    <div class="cart-icon" onclick="showCart()">🛒 <span id="cartCount">0</span></div>
+    <span class="hamburger" onclick="toggleMenu()">☰</span>
+  </div>
+</div>
+</header>
+
+<!-- CART -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>Your Cart 🛒</h3>
+    <span onclick="closeCart()" style="cursor:pointer;font-size:22px;">✕</span>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p style="color:#aaa;text-align:center;margin-top:40px;">Your cart is empty</p>
+  </div>
+  <div class="cart-total" id="cartTotal" style="display:none;">
+    <strong>Total: Rs. <span id="totalPrice">0</span></strong>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<!-- HEADER -->
+<section class="page-header">
+  <h1>About Us</h1>
+  <p>Home / About</p>
+</section>
+
+<!-- ABOUT -->
+<section class="about-page">
+
+  <div class="about-hero">
+    <div class="about-text">
+      <h2>Style Meets Protection</h2>
+      <p>
+        Lumina Shades is a modern eyewear brand focused on delivering premium sunglasses 
+        that combine fashion, comfort, and eye protection. Our designs are inspired by 
+        global trends while ensuring durability and UV protection for everyday use.
+      </p>
+
+      <p>
+        What started as a passion for stylish eyewear has grown into a trusted brand 
+        for men and women who want to look confident while protecting their eyes. 
+        Every pair is crafted with precision, quality materials, and attention to detail.
+      </p>
+
+      <blockquote>"See the world clearer. Look better doing it."</blockquote>
+
+      <div class="about-stat">
+        <span>3000+</span> Happy Customers
+      </div>
+    </div>
+
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600" alt="Sunglasses" loading="lazy">
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div class="values-section">
+    <h2>Our Values</h2>
+    <p>The principles behind Lumina Shades</p>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <span>🕶️</span>
+        <h3>Style</h3>
+        <p>We create trendy designs that match modern fashion and personality.</p>
+      </div>
+
+      <div class="value-card">
+        <span>⭐</span>
+        <h3>Quality</h3>
+        <p>Each pair is tested for durability, comfort, and premium feel.</p>
+      </div>
+
+      <div class="value-card">
+        <span>☀️</span>
+        <h3>Protection</h3>
+        <p>UV protection lenses keep your eyes safe under the sun.</p>
+      </div>
+
+      <div class="value-card">
+        <span>🌍</span>
+        <h3>Innovation</h3>
+        <p>We blend technology with design to improve your experience.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT CTA -->
+  <div class="contact-cta">
+    <h2>Get In Touch</h2>
+    <p>📧 imtiaz@gmail.com</p>
+    <p>📞 03xxxxxxx76</p>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+
+    <div class="footer-col">
+      <h3>🕶️ Lumina Shades</h3>
+      <p>Premium sunglasses for every style and every moment.</p>
+      <div class="social-links">
+        <a href="#">📘 Facebook</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">🐦 Twitter</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="products.php">Products</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="blog.php">Blog</a></li>
+        <li><a href="contact.php">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>📧 imtiaz@gmail.com</p>
+      <p>📞 03xxxxxxx76</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Stay Updated</h4>
+      <form class="footer-newsletter" onsubmit="subscribe(event)">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">→</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Lumina Shades. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

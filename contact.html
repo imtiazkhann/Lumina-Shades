@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact - Lumina Shades</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="navbar">
+
+  <h2 class="logo">🕶️ Lumina Shades</h2>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="products.php">Products</a></li>
+      <li><a href="about.php">About</a></li>
+      <li><a href="blog.php">Blog</a></li>
+      <li><a href="contact.php" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-icons">
+    <div class="cart-icon" onclick="showCart()">🛒 <span id="cartCount">0</span></div>
+    <span class="hamburger" onclick="toggleMenu()">☰</span>
+  </div>
+
+</div>
+</header>
+
+<!-- CART -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>Your Cart 🛒</h3>
+    <span onclick="closeCart()" style="cursor:pointer;font-size:22px;">✕</span>
+  </div>
+
+  <div class="cart-items" id="cartItems">
+    <p style="color:#aaa;text-align:center;margin-top:40px;">Your cart is empty</p>
+  </div>
+
+  <div class="cart-total" id="cartTotal" style="display:none;">
+    <strong>Total: Rs. <span id="totalPrice">0</span></strong>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <h1>Contact Us</h1>
+  <p>Home / Contact</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-page">
+
+  <div class="contact-container">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+
+      <h2>Get In Touch With Lumina Shades</h2>
+
+      <p>
+        We’re here to help you find the perfect sunglasses.
+        Whether you need product guidance, order support, or collaboration inquiries,
+        our team is ready to assist you.
+      </p>
+
+      <div class="contact-details">
+
+        <div class="contact-item">
+          <span>📧</span>
+          <div>
+            <h4>Email Support</h4>
+            <p>imtiazkhan@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>📞</span>
+          <div>
+            <h4>Customer Care</h4>
+            <p>+92 300 1234567</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>📍</span>
+          <div>
+            <h4>Location</h4>
+            <p>Pakistan</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>⏰</span>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Mon - Sat: 10AM - 8PM</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="social-links-contact">
+        <h4>Follow Lumina Shades</h4>
+        <a href="#">📘 Facebook</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">🐦 Twitter</a>
+        <a href="#">🎥 TikTok</a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-form">
+
+      <form onsubmit="sendMessage(event)">
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Optional">
+
+        <label>Subject</label>
+        <input type="text" placeholder="Order, Support, Collaboration...">
+
+        <label>Your Message</label>
+        <textarea rows="6" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit" class="btn btn-primary">Send Message →</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-content">
+
+    <div class="footer-col">
+      <h3>🕶️ Lumina Shades</h3>
+      <p>Premium sunglasses designed for style, comfort, and UV protection.</p>
+
+      <div class="social-links">
+        <a href="#">📘 Facebook</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">🐦 Twitter</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="products.php">Products</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="blog.php">Blog</a></li>
+        <li><a href="contact.php">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📧 imtiazkhan@gmail.com</p>
+      <p>📞 +92 300 1234567</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <form class="footer-newsletter">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">→</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Lumina Shades. All rights reserved. | See The World In Style 🕶️</p>
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
